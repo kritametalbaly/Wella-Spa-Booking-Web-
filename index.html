@@ -186,10 +186,36 @@
       function getPayload() {
         return Object.fromEntries(new FormData(form).entries());
       }
-      function submitBooking(payload) {
-        // Future integration: return fetch('/api/bookings', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
-        console.log('Booking payload:', JSON.stringify(payload, null, 2));
-      }
+async function submitBooking(payload) {
+  const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/peo9eay7mx6rxpg6njwrxqbiyu5km0qx'; 
+  submitButton.disabled = true;
+  buttonText.textContent = 'กำลังส่งข้อมูล...';
+
+  try {
+    const response = await fetch(MAKE_WEBHOOK_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    bookingSection.classList.add('hidden');
+    successPage.classList.remove('hidden');
+    successPage.focus();
+    successPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  } catch (error) {
+    console.error('Error submitting booking:', error);
+    alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
+  } finally {
+    submitButton.disabled = false;
+    buttonText.textContent = 'ส่งคำขอจองบริการ';
+  }
+}
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         updateEarliestTime();
