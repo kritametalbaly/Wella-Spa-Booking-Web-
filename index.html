@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="จองบริการนวดมืออาชีพถึงสถานที่ของคุณ" />
+    <title>Wella Spa | จองบริการนวด</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { espresso: '#4A3728', clay: '#A9805A', cream: '#F7F1E8', sand: '#E9DDCF' },
+            fontFamily: { sans: ['Prompt', 'ui-sans-serif', 'system-ui', 'sans-serif'], display: ['Prompt', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+            boxShadow: { soft: '0 18px 45px rgba(74, 55, 40, .12)' },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Prompt', ui-sans-serif, system-ui, sans-serif; }
+      .hero-image { background-image: linear-gradient(90deg, rgba(38,27,18,.76) 0%, rgba(38,27,18,.52) 44%, rgba(38,27,18,.18) 100%), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=2000&q=85'); background-position: center; }
+      .field:focus { border-color: #A9805A; box-shadow: 0 0 0 4px rgba(169,128,90,.16); outline: none; }
+      .field[aria-invalid='true'] { border-color: #b4534d; background-color: #fffafa; }
+      .form-card { animation: rise .55s ease-out both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+    </style>
+  </head>
+  <body class="bg-cream text-espresso antialiased">
+    <header class="absolute inset-x-0 top-0 z-10">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8" aria-label="Main navigation">
+        <a href="#top" class="font-display text-2xl font-bold tracking-tight text-white" aria-label="Wella Spa หน้าหลัก">Wella Spa</a>
+        <a href="#booking" class="rounded-full border border-white/40 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white hover:text-espresso focus:outline-none focus:ring-2 focus:ring-white">จองบริการนวด</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-image relative isolate flex min-h-[620px] items-center bg-cover bg-center">
+        <div class="mx-auto w-full max-w-7xl px-5 pt-20 sm:px-8">
+          <div class="max-w-2xl text-white">
+            <p class="mb-5 flex items-center gap-2 text-sm font-semibold tracking-[.12em] text-[#ead4c0]"><span class="h-px w-8 bg-[#ead4c0]"></span> Time to relax, Time to Wella Spa</p>
+            <h1 class="font-display text-5xl font-bold leading-[1.2] tracking-tight sm:text-6xl lg:text-7xl">จองบริการนวด<br />ได้ทุกเวลา</h1>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-white/90 sm:text-xl">นักบำบัดมืออาชีพพร้อมให้บริการถึงบ้าน โรงแรม ออฟฟิศ หรืองานอีเวนต์ของคุณ</p>
+            <a href="#booking" class="mt-9 inline-flex items-center gap-2 rounded-full bg-[#f7f1e8] px-6 py-3.5 font-bold text-espresso shadow-lg transition hover:-translate-y-0.5 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4A3728]">จองตอนนี้ <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-cream to-transparent"></div>
+      </section>
+
+      <section id="booking" class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+        <div class="mb-10 max-w-xl">
+          <p class="text-sm font-bold tracking-[.12em] text-clay">ช่วงเวลาแห่งการผ่อนคลาย</p>
+          <h2 class="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">บอกสิ่งที่คุณต้องการ</h2>
+          <p class="mt-4 leading-7 text-espresso/70">ส่งรายละเอียดที่สะดวก แล้วเราจะยืนยันนักบำบัดให้คุณโดยเร็วที่สุด</p>
+        </div>
+
+        <div class="grid items-start gap-8 lg:grid-cols-[minmax(0,1.55fr)_minmax(320px,.85fr)]">
+          <form id="bookingForm" class="form-card rounded-2xl bg-white p-6 shadow-soft sm:p-9" novalidate>
+            <div class="mb-8 flex items-center justify-between border-b border-sand pb-5">
+              <h3 class="font-display text-2xl font-bold">รายละเอียดการจอง</h3>
+              <span class="rounded-full bg-cream px-3 py-1 text-xs font-bold text-clay">ขั้นตอนเดียว</span>
+            </div>
+            <div class="grid gap-x-5 gap-y-6 sm:grid-cols-2">
+              <div class="sm:col-span-2">
+                <label for="massageType" class="mb-2 block text-sm font-bold">ประเภทการนวด <span class="text-[#b4534d]">*</span></label>
+                <select id="massageType" name="massageType" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 text-base transition"><option value="">เลือกประเภทการนวด</option><option>นวดแผนไทย</option><option>นวดน้ำมันอโรม่า</option><option>นวดไทยรีดเส้น</option><option>นวดแก้ออฟฟิศซินโดรม</option><option>นวดคอ บ่า ไหล่</option><option>นวดเท้า</option></select>
+                <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="massageType"></p>
+              </div>
+              <div><label for="preferredDate" class="mb-2 block text-sm font-bold">วันที่ต้องการใช้บริการ <span class="text-[#b4534d]">*</span></label><input id="preferredDate" name="preferredDate" type="date" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="preferredDate"></p></div>
+              <div><label for="preferredTime" class="mb-2 block text-sm font-bold">เวลาที่ต้องการใช้บริการ <span class="text-[#b4534d]">*</span></label><input id="preferredTime" name="preferredTime" type="time" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition" /><p class="mt-1.5 text-xs text-espresso/55">จองล่วงหน้า 2 ชั่วโมงก่อนเวลาให้บริการ</p><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="preferredTime"></p></div>
+              <div class="sm:col-span-2"><label for="timePeriod" class="mb-2 block text-sm font-bold">ระยะเวลานวด <span class="text-[#b4534d]">*</span></label><select id="timePeriod" name="timePeriod" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกระยะเวลานวด</option><option>60 นาที</option><option>90 นาที</option><option>120 นาที</option><option>150 นาที</option><option>180 นาที</option><option>210 นาที</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="timePeriod"></p></div>
+              <div><label for="customerName" class="mb-2 block text-sm font-bold">ชื่อผู้จอง <span class="text-[#b4534d]">*</span></label><input id="customerName" name="customerName" type="text" autocomplete="name" required placeholder="เช่น นรินทร์ ส." class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="customerName"></p></div>
+              <div><label for="telephone" class="mb-2 block text-sm font-bold">เบอร์โทรศัพท์ <span class="text-[#b4534d]">*</span></label><input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="เช่น 081 234 5678" class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="telephone"></p></div>
+              <div><label for="referralSource" class="mb-2 block text-sm font-bold">ช่องทางที่เห็นเว็บการจองนี้ <span class="text-[#b4534d]">*</span></label><select id="referralSource" name="referralSource" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกช่องทาง</option><option>Facebook</option><option>Line OA</option><option>อื่น ๆ</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="referralSource"></p></div>
+              <div><label for="therapistGender" class="mb-2 block text-sm font-bold">เพศของหมอนวดที่ต้องการ <span class="text-[#b4534d]">*</span></label><select id="therapistGender" name="therapistGender" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกความต้องการ</option><option>หญิง</option><option>ชาย</option><option>เพศไหนก็ได้</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="therapistGender"></p></div>
+              <div class="sm:col-span-2"><label for="location" class="mb-2 block text-sm font-bold">สถานที่ให้บริการ <span class="text-[#b4534d]">*</span></label><select id="location" name="location" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกสถานที่</option><option>บ้าน</option><option>โรงแรม</option><option>ออฟฟิศ</option><option>สถานที่จัดงาน</option><option>อื่น ๆ</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="location"></p></div>
+              <div class="sm:col-span-2"><label for="address" class="mb-2 block text-sm font-bold">ที่อยู่ <span class="text-[#b4534d]">*</span></label><textarea id="address" name="address" rows="3" required placeholder="อาคาร ถนน เขต/แขวง และรายละเอียดเพื่อให้นักบำบัดเดินทางถึงคุณได้สะดวก" class="field w-full resize-y rounded-xl border border-sand px-4 py-3.5 transition"></textarea><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="address"></p></div>
+              <div class="sm:col-span-2"><label for="googleMapsLink" class="mb-2 block text-sm font-bold">ลิงก์ Google Maps <span class="font-normal text-espresso/50">(ไม่บังคับ)</span></label><input id="googleMapsLink" name="googleMapsLink" type="url" inputmode="url" placeholder="https://maps.google.com/..." class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="googleMapsLink"></p><p class="mt-1.5 text-xs leading-5 text-espresso/55">วางลิงก์แชร์จาก Google Maps เพื่อให้นักบำบัดเดินทางถึงคุณได้สะดวก</p></div>
+              <div class="sm:col-span-2"><label for="additionalRequirement" class="mb-2 block text-sm font-bold">ความต้องการเพิ่มเติม <span class="font-normal text-espresso/50">(ไม่บังคับ)</span></label><textarea id="additionalRequirement" name="additionalRequirement" rows="4" placeholder="จุดจอดรถ · ความต้องการเพศของนักบำบัด · ชั้นของอาคาร · การเข้าออฟฟิศ · ภาวะสุขภาพ · หรือสิ่งอื่นที่อยากให้เราทราบ" class="field w-full resize-y rounded-xl border border-sand px-4 py-3.5 transition"></textarea></div>
+            </div>
+            <div id="formStatus" class="mt-7 hidden rounded-xl px-4 py-3 text-sm font-semibold" role="status" aria-live="polite"></div>
+            <button id="submitButton" type="submit" class="mt-7 flex w-full items-center justify-center gap-2 rounded-xl bg-espresso px-5 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#604735] focus:outline-none focus:ring-4 focus:ring-[#a9805a]/30 disabled:cursor-not-allowed disabled:opacity-70"><span id="buttonText">ส่งคำขอจองบริการ</span><span aria-hidden="true">→</span></button>
+          </form>
+
+          <aside class="lg:sticky lg:top-6" aria-label="สรุปรายการจอง">
+            <div class="rounded-2xl border border-[#decdbd] bg-[#fffaf4] p-6 shadow-soft sm:p-7">
+              <div class="flex items-center justify-between"><h3 class="font-display text-2xl font-bold">สรุปการจอง</h3><span class="text-xl" aria-hidden="true">✦</span></div>
+              <p class="mt-2 text-sm leading-6 text-espresso/65">รายละเอียดของคุณจะแสดงที่นี่โดยอัตโนมัติ</p>
+              <dl class="mt-6 space-y-4 text-sm">
+                <div class="border-b border-sand/70 pb-4"><dt class="font-semibold text-espresso/55">ประเภทการนวด</dt><dd id="summary-massageType" class="mt-1 font-semibold">ยังไม่ได้เลือก</dd></div>
+                <div class="grid grid-cols-2 gap-4 border-b border-sand/70 pb-4"><div><dt class="font-semibold text-espresso/55">วันที่</dt><dd id="summary-preferredDate" class="mt-1 font-semibold">—</dd></div><div><dt class="font-semibold text-espresso/55">เวลา</dt><dd id="summary-preferredTime" class="mt-1 font-semibold">—</dd></div></div>
+                <div><dt class="font-semibold text-espresso/55">ระยะเวลานวด</dt><dd id="summary-timePeriod" class="mt-1 font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">สถานที่</dt><dd id="summary-location" class="mt-1 font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">เบอร์โทรศัพท์</dt><dd id="summary-telephone" class="mt-1 font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">ช่องทางที่พบเรา</dt><dd id="summary-referralSource" class="mt-1 font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">เพศของหมอนวด</dt><dd id="summary-therapistGender" class="mt-1 font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">ที่อยู่</dt><dd id="summary-address" class="mt-1 whitespace-pre-line font-semibold">—</dd></div>
+                <div><dt class="font-semibold text-espresso/55">Google Maps</dt><dd class="mt-1 font-semibold"><a id="summary-googleMapsLink" href="#" target="_blank" rel="noopener noreferrer" class="hidden break-all text-clay underline decoration-clay/50 underline-offset-2 transition hover:text-espresso">เปิดแผนที่</a><span id="summary-googleMapsLinkEmpty">—</span></dd></div>
+                <div><dt class="font-semibold text-espresso/55">ความต้องการเพิ่มเติม</dt><dd id="summary-additionalRequirement" class="mt-1 whitespace-pre-line font-semibold">—</dd></div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section id="successPage" class="hidden min-h-[70vh] px-5 py-20 sm:px-8" aria-live="polite" tabindex="-1">
+        <div class="mx-auto flex max-w-xl flex-col items-center rounded-2xl bg-white px-6 py-14 text-center shadow-soft sm:px-12">
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-[#e6f3eb] text-3xl text-[#286343]" aria-hidden="true">✓</div>
+          <p class="mt-7 text-sm font-bold tracking-[.12em] text-clay">WELLA SPA</p>
+          <h2 class="mt-3 font-display text-3xl font-bold leading-relaxed sm:text-4xl">การจองของคุณได้สำเร็จ</h2>
+          <p class="mt-4 leading-8 text-espresso/70">โปรดลองการติดต่อกลับจากแอดมิน</p>
+          <button id="newBookingButton" type="button" class="mt-9 rounded-xl bg-espresso px-6 py-3.5 font-bold text-white transition hover:bg-[#604735] focus:outline-none focus:ring-4 focus:ring-[#a9805a]/30">จองบริการอีกครั้ง</button>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-sand bg-white px-5 py-8 text-center text-sm text-espresso/60">Wella Spa · Time to relax, Time to Wella Spa</footer>
+
+    <script>
+      /** API-ready booking controller. Replace console.log in submitBooking with a fetch call later. */
+      const form = document.querySelector('#bookingForm');
+      const fields = [...form.querySelectorAll('input, select, textarea')];
+      const submitButton = document.querySelector('#submitButton');
+      const buttonText = document.querySelector('#buttonText');
+      const status = document.querySelector('#formStatus');
+      const bookingSection = document.querySelector('#booking');
+      const successPage = document.querySelector('#successPage');
+      const newBookingButton = document.querySelector('#newBookingButton');
+      const requiredIds = ['massageType', 'preferredDate', 'preferredTime', 'timePeriod', 'customerName', 'telephone', 'referralSource', 'therapistGender', 'location', 'address'];
+
+      const formatDate = (value) => value ? new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${value}T00:00:00`)) : '—';
+      const toLocalDateValue = (date) => {
+        const offset = date.getTimezoneOffset() * 60000;
+        return new Date(date.getTime() - offset).toISOString().split('T')[0];
+      };
+      const updateEarliestTime = () => {
+        const dateField = document.querySelector('#preferredDate');
+        const timeField = document.querySelector('#preferredTime');
+        const earliest = new Date(Date.now() + 2 * 60 * 60 * 1000);
+        const earliestDate = toLocalDateValue(earliest);
+        dateField.min = earliestDate;
+        timeField.min = dateField.value === earliestDate
+          ? `${String(earliest.getHours()).padStart(2, '0')}:${String(earliest.getMinutes()).padStart(2, '0')}`
+          : '';
+        if (timeField.min && timeField.value && timeField.value < timeField.min) timeField.value = '';
+      };
+      const updateSummary = () => fields.forEach(field => {
+        const target = document.querySelector(`#summary-${field.name}`);
+        if (!target) return;
+        if (field.name === 'googleMapsLink') {
+          const hasLink = Boolean(field.value.trim());
+          target.href = hasLink ? field.value.trim() : '#';
+          target.textContent = hasLink ? field.value.trim() : '';
+          target.classList.toggle('hidden', !hasLink);
+          document.querySelector('#summary-googleMapsLinkEmpty').classList.toggle('hidden', hasLink);
+          return;
+        }
+        const value = field.name === 'preferredDate' ? formatDate(field.value) : field.value.trim();
+        target.textContent = value || (field.name === 'massageType' ? 'ยังไม่ได้เลือก' : '—');
+      });
+      const showError = (field, message = '') => {
+        const error = document.querySelector(`[data-error-for="${field.id}"]`);
+        field.setAttribute('aria-invalid', Boolean(message));
+        error.textContent = message;
+        error.classList.toggle('hidden', !message);
+      };
+      const validateField = (field) => {
+        let error = '';
+        if (requiredIds.includes(field.id) && !field.value.trim()) error = 'กรุณากรอกข้อมูลในช่องนี้';
+        if (field.id === 'preferredDate' && field.value && field.min && field.value < field.min) error = 'กรุณาเลือกวันที่ล่วงหน้าอย่างน้อย 2 ชั่วโมง';
+        if (field.id === 'telephone' && field.value.trim()) {
+          const digits = field.value.replace(/\D/g, '');
+          if (digits.length < 8 || digits.length > 15) error = 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (8–15 หลัก)';
+        }
+        if (field.id === 'googleMapsLink' && field.value.trim()) {
+          try { new URL(field.value); } catch { error = 'กรุณากรอกลิงก์ Google Maps ให้ถูกต้อง'; }
+        }
+        if (field.id === 'preferredTime' && field.value && field.min && field.value < field.min) error = 'กรุณาเลือกเวลาล่วงหน้าอย่างน้อย 2 ชั่วโมง';
+        showError(field, error); return !error;
+      };
+      fields.forEach(field => { field.addEventListener('input', () => { updateSummary(); if (field.getAttribute('aria-invalid') === 'true') validateField(field); }); field.addEventListener('change', () => { if (field.id === 'preferredDate') updateEarliestTime(); updateSummary(); validateField(field); }); field.addEventListener('blur', () => validateField(field)); });
+
+      function getPayload() {
+        return Object.fromEntries(new FormData(form).entries());
+      }
+      function submitBooking(payload) {
+        // Future integration: return fetch('/api/bookings', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+        console.log('Booking payload:', JSON.stringify(payload, null, 2));
+      }
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        updateEarliestTime();
+        const valid = fields.map(validateField).every(Boolean);
+        if (!valid) { form.querySelector('[aria-invalid="true"]')?.focus(); return; }
+        const payload = getPayload();
+        submitButton.disabled = true; buttonText.textContent = 'กำลังส่งคำขอ...';
+        window.setTimeout(() => {
+          submitBooking(payload);
+          submitButton.disabled = false; buttonText.textContent = 'ส่งคำขอจองบริการ';
+          bookingSection.classList.add('hidden');
+          successPage.classList.remove('hidden');
+          successPage.focus();
+          successPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 750);
+      });
+      newBookingButton.addEventListener('click', () => {
+        form.reset(); updateEarliestTime(); updateSummary();
+        bookingSection.classList.remove('hidden');
+        successPage.classList.add('hidden');
+        bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      updateEarliestTime();
+      updateSummary();
+    </script>
+  </body>
+</html>
