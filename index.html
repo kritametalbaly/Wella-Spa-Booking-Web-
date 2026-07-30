@@ -76,8 +76,8 @@
               <div class="sm:col-span-2"><label for="timePeriod" class="mb-2 block text-sm font-bold">ระยะเวลานวด <span class="text-[#b4534d]">*</span></label><select id="timePeriod" name="timePeriod" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกระยะเวลานวด</option><option>60 นาที</option><option>90 นาที</option><option>120 นาที</option><option>150 นาที</option><option>180 นาที</option><option>210 นาที</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="timePeriod"></p></div>
               <div><label for="customerName" class="mb-2 block text-sm font-bold">ชื่อผู้จอง <span class="text-[#b4534d]">*</span></label><input id="customerName" name="customerName" type="text" autocomplete="name" required placeholder="เช่น นรินทร์ ส." class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="customerName"></p></div>
               <div><label for="telephone" class="mb-2 block text-sm font-bold">เบอร์โทรศัพท์ <span class="text-[#b4534d]">*</span></label><input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="เช่น 081 234 5678" class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="telephone"></p></div>
-              <div><label for="referralSource" class="mb-2 block text-sm font-bold">ช่องทางที่เห็นเว็บการจองนี้ <span class="text-[#b4534d]">*</span></label><select id="referralSource" name="referralSource" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกช่องทาง</option><option>Facebook</option><option>Line OA</option><option>อื่น ๆ</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="referralSource"></p></div>
-              <div><label for="therapistGender" class="mb-2 block text-sm font-bold">เพศของหมอนวดที่ต้องการ <span class="text-[#b4534d]">*</span></label><select id="therapistGender" name="therapistGender" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกความต้องการ</option><option>หญิง</option><option>ชาย</option><option>เพศไหนก็ได้</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="therapistGender"></p></div>
+              <div><label for="referralSource" class="mb-2 block text-sm font-bold">ช่องทางที่เห็นเว็บการจองนี้ <span class="font-normal text-espresso/50">(ไม่บังคับ)</span></label><select id="referralSource" name="referralSource" class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกช่องทาง</option><option>Facebook</option><option>Line OA</option><option>อื่น ๆ</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="referralSource"></p></div>
+              <div><label for="therapistGender" class="mb-2 block text-sm font-bold">เพศของหมอนวดที่ต้องการ <span class="font-normal text-espresso/50">(ไม่บังคับ)</span></label><select id="therapistGender" name="therapistGender" class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกความต้องการ</option><option>หญิง</option><option>ชาย</option><option>เพศไหนก็ได้</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="therapistGender"></p></div>
               <div class="sm:col-span-2"><label for="location" class="mb-2 block text-sm font-bold">สถานที่ให้บริการ <span class="text-[#b4534d]">*</span></label><select id="location" name="location" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition"><option value="">เลือกสถานที่</option><option>บ้าน</option><option>โรงแรม</option><option>ออฟฟิศ</option><option>สถานที่จัดงาน</option><option>อื่น ๆ</option></select><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="location"></p></div>
               <div class="sm:col-span-2"><label for="address" class="mb-2 block text-sm font-bold">ที่อยู่ <span class="text-[#b4534d]">*</span></label><textarea id="address" name="address" rows="3" required placeholder="อาคาร ถนน เขต/แขวง และรายละเอียดเพื่อให้นักบำบัดเดินทางถึงคุณได้สะดวก" class="field w-full resize-y rounded-xl border border-sand px-4 py-3.5 transition"></textarea><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="address"></p></div>
               <div class="sm:col-span-2"><label for="googleMapsLink" class="mb-2 block text-sm font-bold">ลิงก์ Google Maps <span class="font-normal text-espresso/50">(ไม่บังคับ)</span></label><input id="googleMapsLink" name="googleMapsLink" type="url" inputmode="url" placeholder="https://maps.google.com/..." class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" /><p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="googleMapsLink"></p><p class="mt-1.5 text-xs leading-5 text-espresso/55">วางลิงก์แชร์จาก Google Maps เพื่อให้นักบำบัดเดินทางถึงคุณได้สะดวก</p></div>
@@ -129,7 +129,7 @@
       const bookingSection = document.querySelector('#booking');
       const successPage = document.querySelector('#successPage');
       const newBookingButton = document.querySelector('#newBookingButton');
-      const requiredIds = ['massageType', 'preferredDate', 'preferredTime', 'timePeriod', 'customerName', 'telephone', 'referralSource', 'therapistGender', 'location', 'address'];
+      const requiredIds = ['massageType', 'preferredDate', 'preferredTime', 'timePeriod', 'customerName', 'telephone', 'location', 'address'];
 
       const formatDate = (value) => value ? new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${value}T00:00:00`)) : '—';
       const toLocalDateValue = (date) => {
@@ -196,15 +196,11 @@
         const valid = fields.map(validateField).every(Boolean);
         if (!valid) { form.querySelector('[aria-invalid="true"]')?.focus(); return; }
         const payload = getPayload();
-        submitButton.disabled = true; buttonText.textContent = 'กำลังส่งคำขอ...';
-        window.setTimeout(() => {
-          submitBooking(payload);
-          submitButton.disabled = false; buttonText.textContent = 'ส่งคำขอจองบริการ';
-          bookingSection.classList.add('hidden');
-          successPage.classList.remove('hidden');
-          successPage.focus();
-          successPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 750);
+        submitBooking(payload);
+        bookingSection.classList.add('hidden');
+        successPage.classList.remove('hidden');
+        successPage.focus();
+        successPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       newBookingButton.addEventListener('click', () => {
         form.reset(); updateEarliestTime(); updateSummary();
