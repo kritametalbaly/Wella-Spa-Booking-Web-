@@ -108,13 +108,16 @@
                 <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="เช่น 081 234 5678" class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" />
                 <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="telephone"></p>
               </div>
+
+              <!-- ช่องทางที่เห็นเว็บ (ปรับเป็นบังคับกรอก *) -->
               <div>
-                <label for="referralSource" class="mb-2 block text-sm font-bold"><span data-i18n="lblReferral">ช่องทางที่เห็นเว็บการจองนี้</span> <span data-i18n="optLabel" class="font-normal text-espresso/50">(ไม่บังคับ)</span></label>
-                <select id="referralSource" name="referralSource" class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition">
+                <label for="referralSource" class="mb-2 block text-sm font-bold"><span data-i18n="lblReferral">ช่องทางที่เห็นเว็บการจองนี้</span> <span class="text-[#b4534d]">*</span></label>
+                <select id="referralSource" name="referralSource" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition">
                   <!-- Dynamic Options -->
                 </select>
                 <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="referralSource"></p>
               </div>
+
               <div>
                 <label for="therapistGender" class="mb-2 block text-sm font-bold"><span data-i18n="lblGender">เพศของหมอนวดที่ต้องการ</span> <span data-i18n="optLabel" class="font-normal text-espresso/50">(ไม่บังคับ)</span></label>
                 <select id="therapistGender" name="therapistGender" class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition">
@@ -122,6 +125,14 @@
                 </select>
                 <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="therapistGender"></p>
               </div>
+
+              <!-- ช่องระบุรายละเอียดเพิ่มเติมกรณีเลือก "อื่นๆ" (จะถูกซ่อนไว้ในตอนแรก) -->
+              <div id="otherSourceGroup" class="sm:col-span-2 hidden">
+                <label for="otherSourceDetails" class="mb-2 block text-sm font-bold"><span data-i18n="lblOtherSource">ระบุช่องทางที่พบเจอ</span> <span class="text-[#b4534d]">*</span></label>
+                <input id="otherSourceDetails" name="otherSourceDetails" type="text" class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" />
+                <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="otherSourceDetails"></p>
+              </div>
+
               <div class="sm:col-span-2">
                 <label for="location" class="mb-2 block text-sm font-bold"><span data-i18n="lblLocation">สถานที่ให้บริการ</span> <span class="text-[#b4534d]">*</span></label>
                 <select id="location" name="location" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition">
@@ -243,6 +254,7 @@
           lblName: 'ชื่อผู้จอง',
           lblPhone: 'เบอร์โทรศัพท์',
           lblReferral: 'ช่องทางที่เห็นเว็บการจองนี้',
+          lblOtherSource: 'ระบุช่องทางที่พบเจอ',
           optLabel: '(ไม่บังคับ)',
           lblGender: 'เพศของหมอนวดที่ต้องการ',
           lblLocation: 'สถานที่ให้บริการ',
@@ -262,6 +274,7 @@
           btnNewBooking: 'จองบริการอีกครั้ง',
           phName: 'เช่น นรินทร์ ส.',
           phPhone: 'เช่น 081 234 5678',
+          phOtherSource: 'เช่น TikTok, ป้ายโฆษณา, บล็อกเกอร์แนะนำ...',
           phAddress: 'อาคาร ถนน เขต/แขวง และรายละเอียดเพื่อให้นักบำบัดเดินทางถึงคุณได้สะดวก',
           phNotes: 'จุดจอดรถ · ชั้นของอาคาร · การเข้าออฟฟิศ · ภาวะสุขภาพ · หรือสิ่งอื่นที่อยากให้เราทราบ',
           errRequired: 'กรุณากรอกข้อมูลในช่องนี้',
@@ -272,7 +285,7 @@
           // Dropdown Options
           optMassage: ['เลือกประเภทการนวด', 'นวดแผนไทย', 'นวดไทยรีดเส้น', 'นวดน้ำมันอโรม่า', 'นวดคอ บ่า ไหล่', 'นวดแก้ออฟฟิศซินโดรม', 'นวดเท้า'],
           optDuration: ['เลือกระยะเวลานวด', '60 นาที', '90 นาที', '120 นาที', '180 นาที'],
-          optReferral: ['เลือกช่องทาง', 'Facebook', 'Line OA', 'อื่น ๆ'],
+          optReferral: ['เลือกช่องทาง', 'Facebook', 'LINE OA', 'Google Search', 'เพื่อนแนะนำ', 'อื่นๆ (โปรดระบุ)'],
           optGender: ['เลือกความต้องการ', 'หญิง', 'ชาย', 'เพศไหนก็ได้'],
           optLocation: ['เลือกสถานที่', 'บ้าน', 'โรงแรม', 'ออฟฟิศ', 'สถานที่จัดงาน', 'อื่น ๆ']
         },
@@ -294,6 +307,7 @@
           lblName: 'Full Name',
           lblPhone: 'Phone Number',
           lblReferral: 'How did you find us?',
+          lblOtherSource: 'Please specify channel',
           optLabel: '(Optional)',
           lblGender: 'Therapist Gender Preference',
           lblLocation: 'Service Location',
@@ -313,6 +327,7 @@
           btnNewBooking: 'Book Another Service',
           phName: 'e.g. John Doe',
           phPhone: 'e.g. 081 234 5678',
+          phOtherSource: 'e.g. TikTok, Billboard, Blogger...',
           phAddress: 'Building, Street, District, and details for therapist navigation',
           phNotes: 'Parking spot · Floor · Health conditions · Special requests',
           errRequired: 'Please fill in this field',
@@ -323,7 +338,7 @@
           // Dropdown Options
           optMassage: ['Select Massage Type', 'Thai Massage', 'Deep Tissue Thai Massage', 'Aroma Oil Massage', 'Neck, Back & Shoulder Massage', 'Office Syndrome Massage', 'Foot Massage'],
           optDuration: ['Select Duration', '60 mins', '90 mins', '120 mins', '180 mins'],
-          optReferral: ['Select Source', 'Facebook', 'Line OA', 'Others'],
+          optReferral: ['Select Source', 'Facebook', 'LINE OA', 'Google Search', 'Friend Recommendation', 'Others (Please specify)'],
           optGender: ['Select Preference', 'Female', 'Male', 'Any Gender'],
           optLocation: ['Select Location', 'Home', 'Hotel', 'Office', 'Event', 'Others']
         }
@@ -358,6 +373,7 @@
         // Update Placeholders
         document.getElementById('customerName').placeholder = t.phName;
         document.getElementById('telephone').placeholder = t.phPhone;
+        document.getElementById('otherSourceDetails').placeholder = t.phOtherSource;
         document.getElementById('address').placeholder = t.phAddress;
         document.getElementById('additionalRequirement').placeholder = t.phNotes;
 
@@ -386,7 +402,29 @@
       const bookingSection = document.querySelector('#booking');
       const successPage = document.querySelector('#successPage');
       const newBookingButton = document.querySelector('#newBookingButton');
-      const requiredIds = ['massageType', 'preferredDate', 'preferredTime', 'timePeriod', 'customerName', 'telephone', 'location', 'address'];
+      const requiredIds = ['massageType', 'preferredDate', 'preferredTime', 'timePeriod', 'customerName', 'telephone', 'referralSource', 'location', 'address'];
+
+      // ฟังก์ชันควบคุมการ ซ่อน/แสดง และบังคับกรอก ช่อง "ระบุช่องทางที่พบเจอ"
+      const handleReferralChange = () => {
+        const referralSelect = document.getElementById('referralSource');
+        const otherGroup = document.getElementById('otherSourceGroup');
+        const otherInput = document.getElementById('otherSourceDetails');
+        
+        const isOther = referralSelect.value.startsWith('อื่นๆ') || referralSelect.value.startsWith('Others');
+        
+        if (isOther) {
+          otherGroup.classList.remove('hidden');
+          otherInput.setAttribute('required', 'required');
+          if (!requiredIds.includes('otherSourceDetails')) requiredIds.push('otherSourceDetails');
+        } else {
+          otherGroup.classList.add('hidden');
+          otherInput.removeAttribute('required');
+          otherInput.value = '';
+          showError(otherInput, '');
+          const idx = requiredIds.indexOf('otherSourceDetails');
+          if (idx > -1) requiredIds.splice(idx, 1);
+        }
+      };
 
       const formatDate = (value) => value ? new Intl.DateTimeFormat(currentLang === 'th' ? 'th-TH' : 'en-US', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(`${value}T00:00:00`)) : '—';
       const toLocalDateValue = (date) => {
@@ -432,7 +470,17 @@
             document.querySelector('#summary-googleMapsLinkEmpty').classList.toggle('hidden', hasLink);
             return;
           }
-          const value = field.name === 'preferredDate' ? formatDate(field.value) : field.value.trim();
+
+          let value = field.name === 'preferredDate' ? formatDate(field.value) : field.value.trim();
+
+          // รวมข้อความสรุปของช่องทางที่พบเจอ กรณีเลือกว่า "อื่นๆ"
+          if (field.name === 'referralSource') {
+            const otherVal = document.getElementById('otherSourceDetails').value.trim();
+            if ((field.value.startsWith('อื่นๆ') || field.value.startsWith('Others')) && otherVal) {
+              value = `${field.value} (${otherVal})`;
+            }
+          }
+
           target.textContent = value || (field.name === 'massageType' ? t.notSelected : '—');
         });
 
@@ -467,12 +515,23 @@
 
       fields.forEach(field => { 
         field.addEventListener('input', () => { updateSummary(); if (field.getAttribute('aria-invalid') === 'true') validateField(field); }); 
-        field.addEventListener('change', () => { if (field.id === 'preferredDate') updateEarliestTime(); updateSummary(); validateField(field); }); 
+        field.addEventListener('change', () => { 
+          if (field.id === 'preferredDate') updateEarliestTime(); 
+          if (field.id === 'referralSource') handleReferralChange();
+          updateSummary(); 
+          validateField(field); 
+        }); 
         field.addEventListener('blur', () => validateField(field)); 
       });
 
       function getPayload() {
         const data = Object.fromEntries(new FormData(form).entries());
+        
+        // รวมรายละเอียดช่องทางที่พบเจอเข้าไปในข้อมูลหลักก่อนส่ง
+        if ((data.referralSource && data.referralSource.startsWith('อื่นๆ')) || (data.referralSource && data.referralSource.startsWith('Others'))) {
+          data.referralSource = `${data.referralSource}: ${data.otherSourceDetails || ''}`;
+        }
+        
         data.estimatedPrice = calculatePrice(); // Append calculated price
         data.language = currentLang;
         return data;
@@ -490,46 +549,48 @@
             body: JSON.stringify(payload)
           });
 
-          if (!response.ok) throw new Error('Network response was not ok');
-
-          bookingSection.classList.add('hidden');
-          successPage.classList.remove('hidden');
-          successPage.focus();
-          successPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+          if (response.ok) {
+            bookingSection.classList.add('hidden');
+            successPage.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            throw new Error('Network response was not ok.');
+          }
         } catch (error) {
-          console.error('Error submitting booking:', error);
-          alert(currentLang === 'th' ? 'เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง' : 'Error submitting request. Please try again.');
+          alert(currentLang === 'th' ? 'เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง' : 'An error occurred. Please try again.');
         } finally {
           submitButton.disabled = false;
           buttonText.textContent = translations[currentLang].btnSubmit;
         }
       }
 
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        updateEarliestTime();
-        
-        const valid = fields.map(validateField).every(Boolean);
-        if (!valid) { 
-          form.querySelector('[aria-invalid="true"]')?.focus(); 
-          return; 
-        }
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let isValid = true;
+        fields.forEach(field => {
+          if (!validateField(field)) isValid = false;
+        });
 
-        const payload = getPayload();
-        submitBooking(payload);
+        if (isValid) {
+          submitBooking(getPayload());
+        } else {
+          const firstInvalid = form.querySelector('[aria-invalid="true"]');
+          if (firstInvalid) firstInvalid.focus();
+        }
       });
 
       newBookingButton.addEventListener('click', () => {
-        form.reset(); 
-        updateEarliestTime(); 
-        updateSummary();
+        form.reset();
+        handleReferralChange();
+        fields.forEach(field => showError(field, ''));
         bookingSection.classList.remove('hidden');
         successPage.classList.add('hidden');
-        bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        applyLanguage(currentLang);
+        updateEarliestTime();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Init
+      // Initialize Page
       applyLanguage('th');
       updateEarliestTime();
     </script>
