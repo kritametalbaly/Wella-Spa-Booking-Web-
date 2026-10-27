@@ -109,7 +109,7 @@
                 <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="telephone"></p>
               </div>
 
-              <!-- ช่องทางที่เห็นเว็บ (ปรับเป็นบังคับกรอก *) -->
+              <!-- ช่องทางที่เห็นเว็บ (บังคับกรอก *) -->
               <div>
                 <label for="referralSource" class="mb-2 block text-sm font-bold"><span data-i18n="lblReferral">ช่องทางที่เห็นเว็บการจองนี้</span> <span class="text-[#b4534d]">*</span></label>
                 <select id="referralSource" name="referralSource" required class="field w-full rounded-xl border border-sand bg-white px-4 py-3.5 transition">
@@ -126,7 +126,7 @@
                 <p class="mt-1.5 hidden text-sm text-[#b4534d]" data-error-for="therapistGender"></p>
               </div>
 
-              <!-- ช่องระบุรายละเอียดเพิ่มเติมกรณีเลือก "อื่นๆ" (จะถูกซ่อนไว้ในตอนแรก) -->
+              <!-- ช่องระบุรายละเอียดเพิ่มเติมกรณีเลือก "อื่นๆ" -->
               <div id="otherSourceGroup" class="sm:col-span-2 hidden">
                 <label for="otherSourceDetails" class="mb-2 block text-sm font-bold"><span data-i18n="lblOtherSource">ระบุช่องทางที่พบเจอ</span> <span class="text-[#b4534d]">*</span></label>
                 <input id="otherSourceDetails" name="otherSourceDetails" type="text" class="field w-full rounded-xl border border-sand px-4 py-3.5 transition" />
@@ -282,10 +282,10 @@
           errPhone: 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง (8–15 หลัก)',
           errMaps: 'กรุณากรอกลิงก์ Google Maps ให้ถูกต้อง',
           
-          // Dropdown Options
+          // Dropdown Options (เพิ่ม Wellness Haven)
           optMassage: ['เลือกประเภทการนวด', 'นวดแผนไทย', 'นวดไทยรีดเส้น', 'นวดน้ำมันอโรม่า', 'นวดคอ บ่า ไหล่', 'นวดแก้ออฟฟิศซินโดรม', 'นวดเท้า'],
           optDuration: ['เลือกระยะเวลานวด', '60 นาที', '90 นาที', '120 นาที', '180 นาที'],
-          optReferral: ['เลือกช่องทาง', 'Facebook', 'LINE OA', 'Google Search', 'เพื่อนแนะนำ', 'อื่นๆ (โปรดระบุ)'],
+          optReferral: ['เลือกช่องทาง', 'Facebook', 'LINE OA', 'Google Search', 'เพื่อนแนะนำ', 'Wellness Haven', 'อื่นๆ (โปรดระบุ)'],
           optGender: ['เลือกความต้องการ', 'หญิง', 'ชาย', 'เพศไหนก็ได้'],
           optLocation: ['เลือกสถานที่', 'บ้าน', 'โรงแรม', 'ออฟฟิศ', 'สถานที่จัดงาน', 'อื่น ๆ']
         },
@@ -335,10 +335,10 @@
           errPhone: 'Please enter a valid phone number (8–15 digits)',
           errMaps: 'Please enter a valid Google Maps URL',
 
-          // Dropdown Options
+          // Dropdown Options (Added Wellness Haven)
           optMassage: ['Select Massage Type', 'Thai Massage', 'Deep Tissue Thai Massage', 'Aroma Oil Massage', 'Neck, Back & Shoulder Massage', 'Office Syndrome Massage', 'Foot Massage'],
           optDuration: ['Select Duration', '60 mins', '90 mins', '120 mins', '180 mins'],
-          optReferral: ['Select Source', 'Facebook', 'LINE OA', 'Google Search', 'Friend Recommendation', 'Others (Please specify)'],
+          optReferral: ['Select Source', 'Facebook', 'LINE OA', 'Google Search', 'Friend Recommendation', 'Wellness Haven', 'Others (Please specify)'],
           optGender: ['Select Preference', 'Female', 'Male', 'Any Gender'],
           optLocation: ['Select Location', 'Home', 'Hotel', 'Office', 'Event', 'Others']
         }
